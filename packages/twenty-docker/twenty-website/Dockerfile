@@ -1,4 +1,4 @@
-FROM node:18.17.1-alpine as twenty-website-build
+FROM node:18.20.6-alpine as twenty-website-build
 
 
 WORKDIR /app
@@ -15,7 +15,7 @@ RUN yarn
 COPY ./packages/twenty-website /app/packages/twenty-website
 RUN npx nx build twenty-website
 
-FROM node:18.17.1-alpine as twenty-website
+FROM node:18.20.6-alpine as twenty-website
 
 WORKDIR /app/packages/twenty-website
 
